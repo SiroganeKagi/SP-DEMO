@@ -1,0 +1,17 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ProgramActorListMapper">
+    <insert id="addPal">
+        insert into program_actor_list (program_id,actor_id)
+        values (#{programId},#{actorId});
+    </insert>
+    <delete id="deletePal">
+        delete
+        from program_actor_list
+        where program_id = #{programId}
+    </delete>
+    <select id="selectId" resultType="java.lang.Integer">
+        select actor_id
+        from program_actor_list
+        where program_id = #{programId}
+    </select>
+</mapper>
